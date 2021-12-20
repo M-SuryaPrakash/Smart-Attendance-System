@@ -51,7 +51,7 @@ app.post("/notify-student", function (req,res){
     var params = {
         Subject: req.body.subject,
         Message: req.body.message,
-        TopicArn: "arn:aws:sns:ap-south-1:950107650402:SAS-"+req.body.id
+        TopicArn: process.env.TOPIC_Arn_notify_student+req.body.id
     };
     sns.publish(params, function (err, data){
         if(err){
@@ -71,7 +71,7 @@ app.post("/notify-all", function (req,res){
     var params = {
         Subject: req.body.subject,
         Message: req.body.message,
-        TopicArn: "arn:aws:sns:ap-south-1:950107650402:SAS-NotifyAll"
+        TopicArn: process.env.TOPIC_Arn_notify_all
     };
     sns.publish(params, function (err, data){
         if(err){
