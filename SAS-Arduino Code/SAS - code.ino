@@ -16,15 +16,15 @@ RfidDictionaryView rfid(SDA_Pin, RST_Pin, startBlock);
 #define red 5
 
 // wifi credentials
-char* ssid="vivo 1904";
-char* password="Vivo@1234";
+char* ssid="WIFI_NAME";
+char* password="WIFI_PASSWORD";
 
 // creating instance of AWS_IOT library and thing details
 AWS_IOT aws;
 
-char* HOST_ADDRESS="a3e4kg1mwrwqqt-ats.iot.ap-south-1.amazonaws.com";
-char* CLIENT_ID="ESP32";
-char* TOPIC_NAME="$aws/things/ESP32/shadow/name/Smart-Attendance-System/update";
+char* HOST_ADDRESS="AWS_ENDPOINT";
+char* CLIENT_ID="AWS_IoTCORE_THING_NAME";
+char* TOPIC_NAME="AWS_THING_TOPIC_NAME";
 
 // Payload array to store thing shadow JSON document
 char payload[512];
